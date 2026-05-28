@@ -1,0 +1,41 @@
+C:\Users\cargu\Desktop\InvisiGuard\
+│
+├── launcher.py                      <-- 🚀 NEW: The only script you run
+├── current_version.txt              <-- 📄 NEW: (e.g., "v1.1.0") Launcher reads this
+└── previous_version.txt             <-- 💾 NEW: (e.g., "v1.0.0") Launcher's backup for rollback
+│
+├── versions\                        <-- 📂 NEW: Holds all application code versions
+│   │
+│   ├── 1.1.0\                      <-- Your current code moves here
+│   │   ├── main_code.py
+│   │   ├── novelda.py
+│   │   ├── ti.py
+│   │   ├── 20241123_BPM_R5_edit.cfg
+│   │   └── Pointnet_LSTM_HAR_model_2_epoch500.pt
+│   │
+│   └── 1.2.0\                      <-- The new version will be unpacked here
+│       ├── main_code.py
+│       └── ...
+│
+└── shared_data\                     <-- 📦 NEW: All persistent data, logs, and certs
+    │
+    ├── device_config.ini            <-- (Moved)
+    ├── message_buffer.json          <-- (Moved)
+    │
+    ├── health.ping                  <-- 💓 NEW: Worker creates this on successful start
+    ├── rollback.log                 <-- 📜 NEW: Launcher writes this if update fails
+    ├── update.flag                  <-- 🚩 NEW: Worker creates this to signal update
+    │
+    ├── certs\                       <-- (Moved)
+    │   └── ...
+    │
+    └── logs\
+        ├── unified_log\
+        │   └── unified_log.jsonl
+        ├── Novelda_Data\
+        │   └── radar_data_log.csv
+        ├── TI_DATA\
+        │   ├── radar_raw_log.csv
+        │   └── radar_output_log.csv
+        ├── heartbeat_payload.csv
+        └── fusion_data.json

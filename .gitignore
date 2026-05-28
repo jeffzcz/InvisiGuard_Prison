@@ -1,0 +1,6 @@
+shared_data/logs/
+*.csv
+*.jsonl
+*.pt
+__pycache__/
+*.log
